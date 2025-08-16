@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    .menu {
+      background-color: #494949;
+      width: 100%;
+      height: 100%;
+    }
+    #console {
+      background-color: #717171;
+      padding: 10px;
+      color: #fff;
+      width: 300px;
+      height: 100px;
+      overflow: auto;
+      border: 1px solid #333;
+    }
+    .perangkat-lunak {
+      background-color: #2fe039;
+      color: #fff;
+      padding: 10px 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .command {
+      background-color: #5e5e5e;
+      color: #fff;
+      padding: 10px 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .tombol-ganti {
+      background-color: #1594c4;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .tombol-on {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .tombol-off {
+      background-color: #f44336;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .tombol-restart {
+      background-color: #808080;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function pl() {
+      var nama = prompt ("apa perangkat lunak servermu(bedrock,pocketminemp,papermc");
+      alert("nama perangkat lunak:" + nama + "!")
+    }
+    function nama() {
+      var nama = prompt ("apa nama servermu?");
+      alert("nama server: " + nama + "!")
+    }
+    function on() {
+      alert("server on");
+      document.getElementById("console").innerHTML += "Server On\n";
+    }
+    function off() {
+      alert("server off");
+      document.getElementById("console").innerHTML += "Server Off\n";
+    }
+    function restart() {
+      alert("server telah direstart")
+      document.getElementById("console").innerHTML += "Server Restarted\n";
+    }
+    function command() {
+  var nama = prompt("Ketik command disini");
+  if (nama.startsWith("/")) {
+    document.getElementById("console").innerHTML += nama + "\n";
+    alert("Command: " + nama + "!");
+  } else {
+    alert("Command tidak ditemukan");
+  }
+}
+  </script>
+  <div class="menu">
+  <h1>VJHosting</h1>
+  <p>minecraft</p>
+  <button class="tombol-ganti" onclick="nama()">ganti nama server</button>
+  <button class="tombol-on" onclick="on()">On</button>
+  <button class="tombol-off" onclick="off()">Off</button>
+  <button class="tombol-restart" onclick="restart()">Restart</button>
+  <p>perangkat lunak</p>
+  <button class="perangkat-lunak" onclick="pl()">perangkat lunak</button>
+  <ul> new info
+    <li>Console and Command is bug</li>
+    <li>Wait for the next update to avoid bugs</li>
+  </ul>
+  <p>console</p>
+  <div id="console"></div>
+  <button class="command" onclick="command()">command:________________________________________</button>
+  <p>______________________________________________</p>
+  </div>
+</body>
+  </html>
