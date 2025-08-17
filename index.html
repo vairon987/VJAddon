@@ -61,9 +61,10 @@
     <p>Perangkat Lunak</p>
     <button class="btn perangkat-lunak" onclick="pl()">Pilih Perangkat Lunak</button>
 
-    <ul> New Info
-      <li>Console & Command sudah diperbaiki ✅</li>
-      <li>Tinggal tambahin fitur lagi biar makin keren 🔥</li>
+    <ul> ChangeLog🔥🔥
+      <li>add feature auto scroll console</li>
+      <li>add feature loading server</li>
+      <li>fixed bugs</li>
     </ul>
 
     <p>Console</p>
@@ -72,12 +73,19 @@
   </div>
 
   <script>
+    // Fungsi log ke console
     function logConsole(msg) {
       const consoleBox = document.getElementById("console");
       consoleBox.textContent += msg + "\n";
       consoleBox.scrollTop = consoleBox.scrollHeight; // auto scroll ke bawah
     }
 
+    // Fungsi delay untuk async/await
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // Fungsi prompt perangkat lunak
     function pl() {
       var nama = prompt("Apa perangkat lunak servermu? (bedrock, pocketminemp, papermc)");
       if(nama) {
@@ -86,6 +94,7 @@
       }
     }
 
+    // Fungsi prompt nama server
     function nama() {
       var nama = prompt("Apa nama servermu?");
       if(nama) {
@@ -94,21 +103,63 @@
       }
     }
 
-    function on() {
-      alert("Server On");
+    // Fungsi On Server dengan loading Preparing
+    async function on() {
+      logConsole("Server Starting...");
+
+      // 1-5 cepat (50ms)
+      for (let i = 1; i <= 2; i++) {
+        logConsole("Preparing " + "software");
+        await delay(50);
+      }
+
+      // 6-7 agak lama (300ms)
+      for (let i = 3; i <= 4; i++) {
+        logConsole("Preparing " + "plugin");
+        await delay(900);
+      }
+
+      // 8-10 lama (600ms)
+      for (let i = 6; i <= 7; i++) {
+        logConsole("Preparing " + "mod");
+        await delay(600);
+      }
+
+      // 11-15 agak cepat (150ms)
+      for (let i = 7; i <= 7; i++) {
+        logConsole("Preparing " + "world");
+        await delay(150);
+      }
+      for (let i = 8; i <= 9; i++) {
+        logConsole("Preparing " + "server");
+      await delay(700)
+      }
+      for (let i = 10; i <= 10; i++) {
+        logConsole("Preparing " + "hosting");
+      await delay(900)
+      }
+      for (let i = 11; i <= 12; i++) {
+        logConsole("Preparing " + "vps1&2");
+      await delay(1000)
+      }
+
       logConsole("Server Started ✅");
+      alert("Server On!");
     }
 
+    // Fungsi Off Server
     function off() {
       alert("Server Off");
       logConsole("Server Stopped ❌");
     }
 
+    // Fungsi Restart Server
     function restart() {
       alert("Server Telah Direstart");
       logConsole("Server Restarted 🔄");
     }
 
+    // Fungsi Command
     function runCommand() {
       var nama = prompt("Ketik command disini");
       if (nama && nama.startsWith("/")) {
