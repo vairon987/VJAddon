@@ -46,13 +46,43 @@
     .tombol-restart { background-color: #808080; }
     .perangkat-lunak { background-color: #2fe039; }
     .command { background-color: #5e5e5e; width: 100%; }
+    .Bdomain {
+      background-color: #ffffff00;
+      position: absolute;
+      top: 23%
+    }
+    .Bport {
+      background-color: #ffffff10;
+      position: absolute;
+      top: 29%
+    }
+    #port {
+      position: absolute;
+      right: ;
+    }
+    #domain {
+      background-color: #a6a6a6;
+      width: 105px;
+      color: black;
+    }
+    .pemisah1 {
+      background-color: #ffffff00;
+      color: #ffffff00;
+    }
   </style>
 </head>
 <body>
   <div class="menu">
     <h1>VJHosting</h1>
-    <p>Minecraft Server Panel (Fake)</p>
+    <p>Minecraft Server Panel</p>
 
+    <br>
+    <p class="Bdomain">IP: </p>
+    <h3 id="domain">___vjh.my.id</h3>
+    <p class="Bport">port: </p>
+    <p id="port"></p>
+    <p class="pemisah1">_______________</p>
+    <p>______________________________________________________</p>
     <button class="btn tombol-ganti" onclick="nama()">Ganti Nama Server</button>
     <button class="btn tombol-on" onclick="on()">On</button>
     <button class="btn tombol-off" onclick="off()">Off</button>
@@ -62,9 +92,9 @@
     <button class="btn perangkat-lunak" onclick="pl()">Pilih Perangkat Lunak</button>
 
     <ul> ChangeLog🔥🔥
-      <li>add feature auto scroll console</li>
-      <li>add feature loading server</li>
-      <li>fixed bugs</li>
+      <li>add feature IP</li>
+      <li>add feature PORT</li>
+      <li>fixed new bugs</li>
     </ul>
 
     <p>Console</p>
@@ -73,6 +103,8 @@
   </div>
 
   <script>
+    let port = document.getElementById("port")
+    port.innerText = Math.round(Math.random()*90000)
     // Fungsi log ke console
     function logConsole(msg) {
       const consoleBox = document.getElementById("console");
@@ -172,4 +204,4 @@
     }
   </script>
 </body>
-</html>
+      </html>
